@@ -69,6 +69,19 @@ npm run dev
 
 The frontend will be available at `http://localhost:5173` (or the port shown by Vite)
 
+## Live Deployment
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/jamila131623-art/Basketflix)
+
+The `Dockerfile` builds the React frontend and serves it from the FastAPI backend as one web service. `render.yaml` deploys it on Render's free plan. To run the same container locally:
+
+```bash
+docker build -t basketflix .
+docker run -p 8000:8000 basketflix
+```
+
+Then open http://localhost:8000.
+
 ## Accepted CSV Format
 
 The app accepts only one strict CSV format:

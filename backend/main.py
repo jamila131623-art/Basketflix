@@ -2,11 +2,13 @@ import random
 import io
 import logging
 import math
+from pathlib import Path
 from typing import List, Set, Tuple, Dict, Optional
 from collections import defaultdict
 
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.responses import StreamingResponse
+from fastapi.staticfiles import StaticFiles
 import pandas as pd
 
 app = FastAPI()
@@ -618,3 +620,9 @@ async def analyze(
             status_code=500,
             detail="Something went wrong while analysing this file. Please check it matches the template."
         )
+
+
+# Serve the built frontend (single-service deploy). Must stay after the API routes.
+FRONTEND_DIST = Path(__file__).resolve().parent.parent / 'frontend' / 'dist'
+if FRONTEND_DIST.is_dir():
+    app.mount('/', StaticFiles(directory=FRONTEND_DIST, html=True), name='frontend')

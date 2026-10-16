@@ -1,5 +1,7 @@
 # BasketFlix
 
+**Live demo: https://basketflix.onrender.com**
+
 A Netflix-themed market basket analysis app that recommends product bundles from supermarket transaction data using the Apriori algorithm. The app features a premium, cinematic UI with emoji-based product visualization, plain-language insights for store owners, and interactive bundle building tools.
 
 ## Features
@@ -71,7 +73,7 @@ The frontend will be available at `http://localhost:5173` (or the port shown by 
 
 ## Live Deployment
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/jamila131623-art/Basketflix)
+The app is live at https://basketflix.onrender.com (Render free plan, redeploys automatically on every push to `main`; the first visit after idle can take up to a minute).
 
 The `Dockerfile` builds the React frontend and serves it from the FastAPI backend as one web service. `render.yaml` deploys it on Render's free plan. To run the same container locally:
 

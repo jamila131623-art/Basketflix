@@ -69,7 +69,7 @@ npm install
 npm run dev
 ```
 
-The frontend will be available at `http://localhost:5173` (or the port shown by Vite)
+The frontend will then be available on your own computer at `localhost:5173` (or the port shown by Vite). This address only works on the machine running the app.
 
 ## Live Deployment
 
@@ -82,7 +82,7 @@ docker build -t basketflix .
 docker run -p 8000:8000 basketflix
 ```
 
-Then open http://localhost:8000.
+Then open `localhost:8000` in a browser on the same computer. To share the app with others, use the live demo link above.
 
 ## Accepted CSV Format
 
